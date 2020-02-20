@@ -1,0 +1,20 @@
+{
+  "name": "fastify-gql-upload",
+  "version": "1.0.0",
+  "description": "Plugin to support GraphQL uploads using graphql-upload",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "fastify",
+    "graphql",
+    "upload"
+  ],
+  "author": "Brian Mullan <bmullan91@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "fastify-plugin": "^1.6.0",
+    "graphql-upload": "^10.0.0"
+  }
+}
