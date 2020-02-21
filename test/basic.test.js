@@ -1,8 +1,6 @@
-const { promises: fs } = require('fs')
 const tap = require('tap')
-const path = require('path')
 const FormData = require('form-data')
-const { build, uploadsDir } = require('./build-server')
+const { build } = require('./build-server')
 
 tap.test('fastify-gql-upload - should work', async t => {
   const server = build()
@@ -35,16 +33,8 @@ tap.test('fastify-gql-upload - should work', async t => {
   })
 
   t.equal(res.statusCode, 200)
-  t.deepEqual(JSON.parse(res.body), { data: { uploadImage: true } })
+  t.deepEqual(JSON.parse(res.body), { data: { uploadImage: fileData } })
 
-  const uploadedFile = await fs.readFile(
-    path.join(uploadsDir, uploadFilename),
-    {
-      encoding: 'utf8'
-    }
-  )
-
-  t.equal(uploadedFile, fileData)
   await server.close()
 })
 
