@@ -4,7 +4,7 @@
   "description": "Fastify plugin to support GraphQL uploads using graphql-upload",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "tap --no-coverage  --no-esm test/*.test.js"
   },
   "keywords": [
     "fastify",
@@ -24,5 +24,11 @@
   "bugs": {
     "url": "https://github.com/bmullan91/fastify-gql-upload/issues"
   },
-  "homepage": "https://github.com/bmullan91/fastify-gql-upload#readme"
+  "homepage": "https://github.com/bmullan91/fastify-gql-upload#readme",
+  "devDependencies": {
+    "fastify": "2.12.0",
+    "fastify-gql": "3.0.6",
+    "form-data": "3.0.0",
+    "tap": "14.10.6"
+  }
 }
