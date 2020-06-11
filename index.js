@@ -7,7 +7,7 @@ function fastifyGQLUpload(fastify, options = {}, done) {
     done()
   })
 
-  fastify.addHook('preValidation', async function(request, reply) {
+  fastify.addHook('preValidation', async function (request, reply) {
     if (!request.req.isMultipart) {
       return
     }
@@ -20,5 +20,5 @@ function fastifyGQLUpload(fastify, options = {}, done) {
 
 module.exports = fp(fastifyGQLUpload, {
   fastify: '>= 2.x',
-  name: 'fastify-gql-upload'
+  name: 'fastify-gql-upload',
 })
